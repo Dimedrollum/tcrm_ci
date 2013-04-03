@@ -11,5 +11,15 @@ class Temp extends CI_Controller {
     public function index()
     {
         $this->load->view('template');
+	
+    }
+    /**
+     * 
+     * Test method to check templates part by part
+     * 
+     */
+    public function blocks()
+    {
+	$this->add_view()
     }
 }
