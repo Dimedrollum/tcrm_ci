@@ -20,6 +20,13 @@ class Temp extends CI_Controller {
      */
     public function blocks()
     {
-	$this->add_view()
+        $this->layout->add_view('blocks', 'blocks/login_block');
+        $this->layout->add_view('blocks', 'blocks/search_block');
+        $this->layout->add_view('blocks', 'blocks/links_block');
+        $this->layout->add_view('blocks', 'blocks/links_block');
+        $this->layout->add_view('main', 'template/post_view');
+        $this->layout->add_view('main', 'template/tags_view');
+        $this->layout->render();
+        
     }
 }

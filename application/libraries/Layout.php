@@ -1,23 +1,18 @@
-<?php
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-/**
- * Extention to CI controller to implement simple Layout f-ty
- */
-class MY_Controller extends CI_Controller {
-
-    /**
+class Layout {
+     /**
      *
      * @var array - layout container
      */
-    private $content_areas;
+    private $content_areas = array();
+    private $CI;
     
-    /**
-     * Inherit parrent constructor
-     */
-    function __construct()
+    public function __construct()
     {
-	parent::__construct();
+        $this->CI =& get_instance();
     }
+    
     /**
      * Add view to an appropriate Content areaarea 
      * 
@@ -26,8 +21,8 @@ class MY_Controller extends CI_Controller {
      * @param array $data = array() - Non Mandatory - array with data to wrap
      */
     public function add_view($content_area, $view, $data = array())
-    {
-	$this->add_content($content_area, $this->load->view($view, $data, TRUE));
+    {   
+        $this->add_content($content_area, $this->CI->load->view($view, $data, TRUE));
     }
     
     /**
@@ -38,7 +33,11 @@ class MY_Controller extends CI_Controller {
      */
     private function add_content($content_area, $content)
     {
-	$this->content_areas[$content_area] = $this->content_areas[$content_area] . $content;
+        if (empty($this->content_areas[$content_area]))
+        {
+            $this->content_areas[$content_area]='';
+        }
+        $this->content_areas[$content_area] = $this->content_areas[$content_area] . $content;
     }
 
     /**
@@ -49,7 +48,7 @@ class MY_Controller extends CI_Controller {
     
     public function render($layout = "default")
     {
-	$this->load->view('layouts/' . $layout, $this->content_areas);
+	$this->CI->load->view('layouts/' . $layout, $this->content_areas);
     }
 
 }
