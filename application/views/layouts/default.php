@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Web Site Name</title>
 	<link rel="stylesheet" href="<?=site_url('/public/css/style.css')?>" />
     </head>

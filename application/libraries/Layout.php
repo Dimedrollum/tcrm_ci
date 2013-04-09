@@ -22,7 +22,7 @@ class Layout {
      */
     public function add_view($content_area, $view, $data = array())
     {   
-        $this->add_content($content_area, $this->CI->load->view($view, $data, TRUE));
+        $this->_add_content($content_area, $this->CI->load->view($view, $data, TRUE));
     }
     
     /**
@@ -31,9 +31,9 @@ class Layout {
      * @param str $content_area
      * @param str $content
      */
-    private function add_content($content_area, $content)
+    private function _add_content($content_area, $content)
     {
-        if (empty($this->content_areas[$content_area]))
+        if ( ! isset($this->content_areas[$content_area]))
         {
             $this->content_areas[$content_area]='';
         }
@@ -46,7 +46,7 @@ class Layout {
      * @param string $layout = "default" - change the layout
      */
     
-    public function render($layout = "default")
+    public function render($layout = 'default')
     {
 	$this->CI->load->view('layouts/' . $layout, $this->content_areas);
     }

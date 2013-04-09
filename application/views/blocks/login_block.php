@@ -15,12 +15,12 @@
                     
                 </div><div class="BlockT"></div><div class="BlockR"><div></div></div><div class="BlockB"><div></div></div><div class="BlockL"></div><div class="BlockC"></div><div class="Block">
 
-                    <span class="BlockHeader"><span>Login</span></span>
+                    <span class="BlockHeader"><span>Вход в систему</span></span>
 
                     <div class="BlockContentBorderBorder"><div class="BlockContentBorderBL"><div></div></div><div class="BlockContentBorderBR"><div></div></div><div class="BlockContentBorderTL"></div><div class="BlockContentBorderTR"><div></div></div><div class="BlockContentBorderT"></div><div class="BlockContentBorderR"><div></div></div><div class="BlockContentBorderB"><div></div></div><div class="BlockContentBorderL"></div><div class="BlockContentBorderC"></div><div class="BlockContentBorder">
 
-                            <input type="text" style="width:120px" />
-                            <input type="password" style="width:120px" />
+                            <input type="text" style="width:120px" placeholder="Логин" />
+                            <input type="password" style="width:120px" placeholder="Пароль" />
                             <span class="ButtonInput"><span><input type="button" value="Login" /></span></span>
 
                         </div></div>
