@@ -18,10 +18,28 @@
                     <span class="BlockHeader"><span>Вход в систему</span></span>
 
                     <div class="BlockContentBorderBorder"><div class="BlockContentBorderBL"><div></div></div><div class="BlockContentBorderBR"><div></div></div><div class="BlockContentBorderTL"></div><div class="BlockContentBorderTR"><div></div></div><div class="BlockContentBorderT"></div><div class="BlockContentBorderR"><div></div></div><div class="BlockContentBorderB"><div></div></div><div class="BlockContentBorderL"></div><div class="BlockContentBorderC"></div><div class="BlockContentBorder">
-
-                            <input type="text" style="width:120px" placeholder="Логин" />
-                            <input type="password" style="width:120px" placeholder="Пароль" />
-                            <span class="ButtonInput"><span><input type="button" value="Login" /></span></span>
+			    
+		<?=form_open('home/login')?>
+			    <?=validation_errors()?>
+			    <?php $params=array(
+				'name'		=> 'username',
+				'id'		=> 'username',
+				'style'		=> 'width:120px',
+				'placeholder'	=> 'Логин'
+				)?>
+			    <?=form_input($params)?>
+                            <?php $params=array(
+				'name'		=> 'password',
+				'id'		=> 'password',
+				'style'		=> 'width:120px',
+				'placeholder'	=> 'Пароль'
+				)?>
+			    <?=form_password($params)?>
+                            <span class="ButtonInput"><span>
+				    
+			    <?=form_submit('login','Войти')?>
+				</span></span>
+		<?php echo form_close()?>
 
                         </div></div>
 
