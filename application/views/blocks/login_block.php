@@ -20,14 +20,16 @@
                     <div class="BlockContentBorderBorder"><div class="BlockContentBorderBL"><div></div></div><div class="BlockContentBorderBR"><div></div></div><div class="BlockContentBorderTL"></div><div class="BlockContentBorderTR"><div></div></div><div class="BlockContentBorderT"></div><div class="BlockContentBorderR"><div></div></div><div class="BlockContentBorderB"><div></div></div><div class="BlockContentBorderL"></div><div class="BlockContentBorderC"></div><div class="BlockContentBorder">
 			    
 		<?=form_open('home/login')?>
-			    <?=validation_errors()?>
+			    <?=(isset($wrong_creds)) ? $wrong_creds: validation_errors(); ?>
 			    <?php $params=array(
 				'name'		=> 'username',
 				'id'		=> 'username',
 				'style'		=> 'width:120px',
-				'placeholder'	=> 'Логин'
+				'placeholder'	=> 'Логин',
+				'value'		=> set_value('username')
 				)?>
 			    <?=form_input($params)?>
+			    
                             <?php $params=array(
 				'name'		=> 'password',
 				'id'		=> 'password',

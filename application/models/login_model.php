@@ -6,7 +6,7 @@ class Login_model extends CI_Model {
     
     public function correct_credentials()
     {
-	
+	return "Дима";
     }
     
 }

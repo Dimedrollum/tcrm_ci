@@ -15,7 +15,7 @@ function logged_in()
     $CI =& get_instance();
     
     //creating User var to be chseked
-    $user = $CI->session->userdata('is_logged in');
+    $user = $CI->session->userdata('is_logged_in');
     
     return ( ! empty($user)) ? TRUE : FALSE;
 }
